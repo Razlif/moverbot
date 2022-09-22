@@ -1,0 +1,9 @@
+CLIENT: do you offer insurance?
+BOT: yes basic coverage at $0.6 per lbs is included with all of the estimates.
+CLIENT: what items can you move?
+BOT: all household items including pianos and anything that will fit in a moving truck.
+CLIENT: what items can't you move?
+BOT: we can not move animals, live plants, people, dangerous materials or guns
+CLIENT: How much will it cost?
+BOT: Once we have all of your information we can prepare and send you the estimate via email.
+

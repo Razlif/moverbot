@@ -15,6 +15,7 @@ last_message = "mover bot reply"
 stage = "1"
 
 ########## GREETING
+
 print(greeting)
 
 
