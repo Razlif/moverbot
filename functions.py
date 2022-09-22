@@ -20,7 +20,7 @@ environment = jinja2.Environment()
 
 conversation_starter_template = environment.from_string(prompts.conversation_starter_raw_text)
 
-conversation_starter = conversation_starter_template.render(BOT_NAME=settings.bot_name, COMPANY_NAME=settings.company_name, COMPANY_ADDRESS=settings.company_address, COMPANY_EMAIL=settings.company_email, COMPANY_PHONE=settings.company_phone, COMPANY_TYPE=settings.company_type, COMPANY_LICENSE=settings.company_license, YEARS_IN_OPERATION=settings.years_in_operation)
+conversation_starter = conversation_starter_template.render(BOT_NAME=settings.bot_name, COMPANY_NAME=settings.company_name, COMPANY_ADDRESS=settings.company_address, COMPANY_EMAIL=settings.company_email, COMPANY_PHONE=settings.company_phone, COMPANY_TYPE=settings.company_type, COMPANY_LICENSE=settings.company_license, YEARS_IN_OPERATION=settings.years_in_operation, PRICE_PER_HOUR=settings.price_per_hour)
 
 greeting_template = environment.from_string(prompts.greeting_raw_text)
 
@@ -250,7 +250,7 @@ def main_handler(stage, user_text, conversation_history, pickup_zipcode, deliver
         if user_text in check_phone(user_text):
             client_phone = user_text
             stage += 1
-            reply_text = prompts.general_prompt
+            reply_text = "Great, your estimate is on it's way!<br>" + prompts.general_prompt
         else:
             reply_text = prompts.ask_for_phone
     else:

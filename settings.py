@@ -28,15 +28,15 @@ inv.close()
 dispatch_zipcode = "60109"
 company_name = "MOVERS INC"
 bot_name = "Moverbot"
-company_address = "111 somewhere st"
-company_phone = "(999)999-9999"
+company_address = "112 movers lane, chicago IL, 60109"
+company_phone = "(225)344-5555"
 company_email = "sales@moversinc.com"
 allowed_service_locations = ['IL', 'NY', 'TX', 'CA']
 mileage_fee = 2
 minimum_cf_per_job = 300
 price_per_hour = 250
 years_in_operation = "15"
-company_license = "us dot - 9999999"
+company_license = "us dot - 123456"
 company_type = "local moving carrier"
 minimum_hours_per_job = 3
 
