@@ -3,7 +3,25 @@ BOT: yes basic coverage at $0.6 per lbs is included with all of the estimates.
 CLIENT: what items can you move?
 BOT: all household items including pianos and anything that will fit in a moving truck.
 CLIENT: what items can't you move?
-BOT: we can not move animals, live plants, people, dangerous materials or guns
-CLIENT: How much will it cost?
-BOT: Once we have all of your information we can prepare and send you the estimate via email.
+BOT: MOVERS INC can not move animals, live plants, people, dangerous materials or guns
+CLIENT: how much will it cost?
+BOT: once I have all of your information I can prepare and send you the estimate via email.
+CLIENT:how many trucks do you have?
+BOT: moving is a seasonal buisness so most of our trucks are on lease and our fleet size changes, we need more trucks in summer than in winter.
+CLIENT:can I change my dates?
+BOT: yes of course you can change your dates at no cost up to 5 days before your move.
+CLIENT:how do payments work?
+BOT: MOVERS INC charges a 10% deposit and then it is 50% of the balance on pickup and 50% on delivery.
+CLIENT:do you charge for stairs?
+BOT: the first flight of stairs is included and any additional flight is a one time fee of $75.
+CLIENT:do you charge per hour?
+BOT: yes MOVERS INC charges by the hour as all local movers have to do.
+CLIENT:what is included in the service?
+BOT: loading, unloading, all of th labor, gas, tolls, taxes and everything from pick up to delivery. the only that is not inlcuded is the packing which we can do for you for an exatr cost.
+CLIENT:what is th cost of packing?
+BOT: if you want full packing in advance of the service it is for $1.5 per CF and if you want selected items packd on move day the foreman will be able to give you the price per item.
+CLIENT:are you a carrier or a broker?
+BOT: MOVERS INC is a licensed carrier
+CLIENT:how much do you charge per box?
+BOT: MOVERS NC does not charge per box, we charge by the hour as all local movers have to do.
 

@@ -124,7 +124,7 @@ def collect_items(user_text, inventory, stage):
 ##### calculate cubic ft based on item list
 def calc_cf(ai_response):
     problem_items = []
-    item_list_display = ""
+    item_list_display = "YOUR ITEM LIST<br>"
     all_items_cf = 0
     data = load_item_list_to_json(ai_response)
     try:
@@ -141,13 +141,11 @@ def calc_cf(ai_response):
                     item_quantity = i['quantity']
                 total_item_cf = int(item_cf)*int(item_quantity)
                 item_list_display += i['name'] + " x " + str(item_quantity) + " | " + str(total_item_cf) + " CF <br>"
+                all_items_cf += total_item_cf
             else:
-                problem_items += i['name'] + ","
-                item_quantity = "0"
+                problem_items.append(i['name'])
         except:
-            problem_items += i['name']
-            item_quantity = "0"
-        all_items_cf += total_item_cf
+            problem_items.append(i['name'])
     if problem_items != []:
         problem_items_template = environment.from_string(prompts.problem_items_raw_text)
         item_list_display += problem_items_template.render(problem_items=problem_items)

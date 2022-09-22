@@ -30,13 +30,13 @@ company_name = "MOVERS INC"
 bot_name = "Moverbot"
 company_address = "111 somewhere st"
 company_phone = "(999)999-9999"
-company_email = "sales@moverbot.com"
+company_email = "sales@moversinc.com"
 allowed_service_locations = ['IL', 'NY', 'TX', 'CA']
 mileage_fee = 2
 minimum_cf_per_job = 300
 price_per_hour = 250
 years_in_operation = "15"
-company_license = "dot 9999999"
-company_type = "local moving company"
+company_license = "us dot - 9999999"
+company_type = "local moving carrier"
 minimum_hours_per_job = 3
 

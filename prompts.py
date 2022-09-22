@@ -27,6 +27,6 @@ greeting_raw_text = "Hi!<br>I am {{BOT_NAME}}.<br>To get started please enter yo
 
 conversation_starter_raw_text = 'company information(bot name:{{BOT_NAME}}, company name:{{COMPANY_NAME}}, company phone:{{COMPANY_PHONE}}, company email:{{COMPANY_EMAIL}}, years in buisness:{{YEARS_IN_OPERATION}}, company license:{{COMPANY_LICENSE}}, company type:{{COMPANY_TYPE}}). example questions('
 
-price_reply_raw_text = '<br>Based on your list I estimate your move at {{ CUBIC_FT }} Cubic Feet which should take a truck and crew {{ WORKING_HOURS }} - {{ WORKING_HOURS_PLUS }} hours at ${{ PRICE_PER_HOUR }} an hour.<br>With mileage fee the estimate for your move is ${{ PRICE }}<br>'
+price_reply_raw_text = '<br>Based on your list I estimate your move at {{ CUBIC_FT }} Cubic Feet which should take a truck and crew {{ WORKING_HOURS }}-{{ WORKING_HOURS_PLUS }} hours at ${{ PRICE_PER_HOUR }} an hour.<br>With mileage fee the estimate for your move is ${{ PRICE }}<br>'
 
 problem_items_raw_text  = "<br>I am afraid there are a few items I couldn't locate {{ problem_items }}. This doesn't necessarily mean we can't take them but I will need a human collegue to review them first"
