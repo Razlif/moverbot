@@ -42,9 +42,7 @@ For the bot to run properly you will need to update 3 project files.
 
 1. Update the company information on the settings.py file
 
-> update only the user settings section
-
-user settings:
+settings.py:
 ```
 dispatch_zipcode = "90210"  # used to calculate mileage fee
 company_name = ""
@@ -58,26 +56,25 @@ years_in_operation = ""
 company_license = ""
 company_type = ""
 minimum_hours_per_job = 3
-allowed_service_locations = ['CA', '90210', ...]   # you can enter states or zip codes seperated by a comma
+allowed_service_locations = ['CA', '90210', ...]   # you can enter states or zip codes separated by a comma
 ```
-2. Update the questions.txt file
+> update only the user settings section
 
-> This will be a referance for the bot - you can add and remove questions as needed.
+2. Update the questions.txt file
 
 questions.txt
 ```
-CLIENT: What is he price for? how much will it cost?
-BOT: all local movers are required to charge by the hour. we charge $__ per hour for the truck and crew with a minimum of __ hours per job.
-CLIENT: do you offer insurance for my items?
+CLIENT: What is the price for? How much will it cost?
+BOT: All local movers are required to charge by the hour. We charge $__ per hour for the truck and crew with a minimum of __ hours per job.
+CLIENT: Do you offer insurance for my items?
 BOT:
 CLIENT:
 BOT:
 ...
 ```
+> This will be a reference for the bot - you can add and remove questions as needed.
 
 3. Update the cubic feet for the items in the inventory.txt file
-
-> You can add or remove items as needed
 
 inventory.text
 ```
@@ -86,6 +83,7 @@ queen bed : 10
 dresser: 10
 ...
 ```
+> You can add or remove items as needed
 
 # The conversation flow
 
@@ -93,24 +91,25 @@ The bot is designed to work in conversation stages:
 1. Get and validate the client's pick up zip code
 2. Get and validate the client's delivery zip code
 3. collect the client's item list
-4. calculate and present client with the price.
+4. calculate and present the client with the price.
 5. collect client info: email, name, phone.
 6. answer any additional questions
 
 # Running the chatbot
 
 Once all of the files are updated with the necessary information.
-Run the flask app on your local machine and start fine tuning the bot by altering the questions.txt and inventoy.txt as needed.
+Run the flask app on your local machine and start fine tuning the bot by altering the questions.txt and inventory.txt as needed.
+When you are ready, update the HTML + CSS with your design and deploy your app to the web.
 
 # Train your openai model
 
-The bot has the power of an openai model behind it so it is quite intelegant.
+The bot has the power of an openai model behind it so it is quite intelligent.
 But some fine tuning is likely to be required.
-This might mean editing the quesions.txt file or the inventory.txt file until you get the exactly what you want.
+This might mean editing the quesions.txt file or the inventory.txt file until you get exactly what you want.
 
 You can however get much better results by training the openai model, this is done one time and after that the questions.txt file will no longer be necessary.
 You can train your model on an infinite number of complex questions quickly and easily.
 Go here to read more about [training your openai model](https://beta.openai.com/docs/guides/fine-tuning)
->Once your model is trained update the "model name" in the settings.py file and remove the questions.txt file from the prompt variable in the functions.py file.
+>Once your model is trained, update the "model name" in the settings.py file and remove the questions.txt file from the prompt variable in the functions.py file.
 
 # Have Fun!
