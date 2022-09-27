@@ -23,7 +23,7 @@ for line in contents:
 inventory_list += " abstract concepts : 0, people : 0, vehicles : 0, locations : 0, animals : 0, plants : 0, guns : 0, dangerous materials : 0}] "
 inv.close()
 
-#### user settings - edit all settings below this line - add your value inside the quotation marks "your value"
+### user settings - edit all settings below this line - add your value inside the quotation marks "your value"
 dispatch_zipcode = ""
 company_name = ""
 bot_name = ""
