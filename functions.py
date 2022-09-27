@@ -20,13 +20,22 @@ environment = jinja2.Environment()
 
 conversation_starter_template = environment.from_string(prompts.conversation_starter_raw_text)
 
-conversation_starter = conversation_starter_template.render(BOT_NAME=settings.bot_name, COMPANY_NAME=settings.company_name, COMPANY_ADDRESS=settings.company_address, COMPANY_EMAIL=settings.company_email, COMPANY_PHONE=settings.company_phone, COMPANY_TYPE=settings.company_type, COMPANY_LICENSE=settings.company_license, YEARS_IN_OPERATION=settings.years_in_operation, PRICE_PER_HOUR=settings.price_per_hour)
+conversation_starter = conversation_starter_template.render(BOT_NAME=settings.bot_name, COMPANY_NAME=settings.company_name,
+                                                            COMPANY_ADDRESS=settings.company_address, COMPANY_EMAIL=settings.company_email,
+                                                            COMPANY_PHONE=settings.company_phone, COMPANY_TYPE=settings.company_type,
+                                                            COMPANY_LICENSE=settings.company_license, YEARS_IN_OPERATION=settings.years_in_operation,
+                                                            PRICE_PER_HOUR=settings.price_per_hour
+                                                            )
 
 greeting_template = environment.from_string(prompts.greeting_raw_text)
 
 greeting = greeting_template.render(BOT_NAME=settings.bot_name)
 
 general_task_template = environment.from_string(prompts.general_task_raw_text)
+
+problem_items_template = environment.from_string(prompts.problem_items_raw_text)
+
+price_reply_template = environment.from_string(prompts.price_reply_raw_text)
 
 
 #######################
@@ -35,14 +44,11 @@ general_task_template = environment.from_string(prompts.general_task_raw_text)
 
 ##### check for phone in user last entry
 def check_phone(user_text):
-    try:
-        num = "+1" + user_text
-        my_number = phonenumbers.parse(num)
-        if (phonenumbers.is_valid_number(my_number)) is True:
-            phone = user_text
-        else:
-            phone = "None"
-    except:
+    num = "+1" + user_text
+    my_number = phonenumbers.parse(num)
+    if (phonenumbers.is_valid_number(my_number)) is True:
+        phone = user_text
+    else:
         phone = "None"
     return phone
 
@@ -124,7 +130,7 @@ def collect_items(user_text, inventory, stage):
 ##### calculate cubic ft based on item list
 def calc_cf(ai_response):
     problem_items = []
-    item_list_display = "YOUR ITEM LIST<br>"
+    item_list_display = "YOUR ITEM LIST:<br>"
     all_items_cf = 0
     data = load_item_list_to_json(ai_response)
     try:
@@ -135,7 +141,7 @@ def calc_cf(ai_response):
         try:
             item_cf = i['CF']
             if item_cf > 0:
-                if i['quantity'] == "a":
+                if i['quantity'] == "a" or i['quantity'] == "an":
                     item_quantity = "1"
                 else:
                     item_quantity = i['quantity']
@@ -147,7 +153,6 @@ def calc_cf(ai_response):
         except:
             problem_items.append(i['name'])
     if problem_items != []:
-        problem_items_template = environment.from_string(prompts.problem_items_raw_text)
         item_list_display += problem_items_template.render(problem_items=problem_items)
     return item_list_display, all_items_cf
 
@@ -163,20 +168,22 @@ def calculate_price(pickup_zip, delivery_zip, cubic_ft):
         working_hours = int(settings.minimum_hours_per_job)
         working_hours_plus = working_hours+2
         price = int(working_hours*int(settings.price_per_hour))+int(mileage_fee)
-        price_reply_template = environment.from_string(prompts.price_reply_raw_text)
-        price_reply = price_reply_template .render( CUBIC_FT = cubic_ft, WORKING_HOURS = working_hours, WORKING_HOURS_PLUS = working_hours_plus, PRICE_PER_HOUR = settings.price_per_hour, PRICE = price)
+        price_reply = price_reply_template .render( CUBIC_FT = cubic_ft, WORKING_HOURS = working_hours, WORKING_HOURS_PLUS = working_hours_plus,
+                                                    PRICE_PER_HOUR = settings.price_per_hour, PRICE = price
+                                                    )
     else:
         add_hours = int(add_hours/200)
         working_hours = float(settings.minimum_hours_per_job) + add_hours
         working_hours_plus = working_hours+2
         price = int(working_hours*float(settings.price_per_hour))+float(mileage_fee)
-        price_reply_template = environment.from_string(prompts.price_reply_raw_text)
-        price_reply = price_reply_template .render( CUBIC_FT = cubic_ft, WORKING_HOURS = working_hours, WORKING_HOURS_PLUS = working_hours_plus, PRICE_PER_HOUR = settings.price_per_hour, PRICE = price)
+        price_reply = price_reply_template .render( CUBIC_FT = cubic_ft, WORKING_HOURS = int(working_hours), WORKING_HOURS_PLUS = int(working_hours_plus),
+                                                    PRICE_PER_HOUR = settings.price_per_hour, PRICE = int(price)
+                                                    )
     return price_reply
 
 ##### check openai response for mirror answers and answer loops
 def check_message_for_errors(stage, reply_text, last_message, conversation_history, user_text):
-    if reply_text in last_message or reply_text == user_text or prompts.error_text in conversation_history :
+    if reply_text in last_message or reply_text == user_text:
         if prompts.error_text in conversation_history:
             if stage == 1:
                 reply_text = prompts.error_text_2 + prompts.ask_for_pickup_zipcode
@@ -198,8 +205,7 @@ def check_message_for_errors(stage, reply_text, last_message, conversation_histo
 ####################################
 
 
-def main_handler(stage, user_text, conversation_history, pickup_zipcode, delivery_zipcode, pickup_state, delivery_state, mileage_fee, client_inventory ,last_message, client_name, client_phone, client_email):
-    prompt = ""
+def main_handler(stage, user_text, conversation_history, pickup_zipcode, delivery_zipcode, pickup_state, delivery_state,mileage_fee, client_inventory ,last_message, client_name, client_phone, client_email):
     if stage == 1:
         pickup_state, pickup_zipcode, stage = check_user_text_for_location(user_text, stage)
         if pickup_state == "None":
@@ -259,4 +265,4 @@ def main_handler(stage, user_text, conversation_history, pickup_zipcode, deliver
         ai_response = open_ai_api(prompt)
         reply_text = check_message_for_errors(stage, ai_response, last_message, conversation_history, user_text)
     reply_text += "<br>"
-    return prompt, reply_text, stage, pickup_zipcode, delivery_zipcode, pickup_state, delivery_state, mileage_fee, client_inventory, client_name, client_phone, client_email
+    return reply_text, stage, pickup_zipcode, delivery_zipcode, pickup_state, delivery_state, mileage_fee, client_inventory, client_name, client_phone, client_email

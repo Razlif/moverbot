@@ -1,1 +1,9 @@
-/////requiremtns file
+python-dotenv
+uszipcode
+pgeocode
+openai
+phonenumbers
+jinja2
+flask
+
+

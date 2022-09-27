@@ -1,35 +1,43 @@
-king bed : 85
-queen bed : 75
-single bed : 60
-night stand : 5
-dresser : 40
-large mirror : 15
-chest : 30
-tv : 20
-small box : 3
-medium box : 4
-large box : 5
-coffee table : 20
-end table : 5
-lamp : 5
-book case : 25
-book shelf : 25
-sofa : 60
-loveseat : 45
-sofa chair : 25
-dining table : 40
-dining chair : 5
-2 pc sectional : 110
-desk : 30
+king bed : 10
+queen bed : 10
+single bed : 10
+night stand : 10
+dresser : 10
+large mirror : 10
+chest : 10
+tv : 10
+small box : 10
+medium box : 10
+large box : 10
+coffee table : 10
+end table : 10
+lamp : 10
+book case : 10
+book shelf : 10
+sofa : 10
+loveseat : 10
+sofa chair : 10
+dining table : 10
+dining chair : 10
+2 pc sectional : 10
+desk : 10
 desk chair : 10
-china cabinet : 50
-washer : 25
-dryer : 25
-refrigirator : 50
+china cabinet : 10
+washer : 10
+dryer : 10
+refrigirator : 10
 small furniture item : 10
-medium furniture item : 25
+medium furniture item : 10
 other small item : 10
-other medium item : 25
-bag : 5
-handheld item : 5
-upright piano : 100
+other medium item : 10
+bag : 10
+handheld item : 10
+small chair : 10
+medium chair : 10
+large chair : 10
+medium table : 10
+large table : 10
+wall hanging item small : 10
+mirror : 10
+upright piano : 10
+tv stand : 10
