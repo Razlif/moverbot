@@ -15,7 +15,7 @@ git clone https://github.com/Razlif/moverbot.git
 ```
 Next install the required packages
 ```
-pip3 install --user -r requirements.txt
+pip install --user -r requirements.txt
 ```
 
 # Openai Credentials
@@ -46,19 +46,19 @@ For the bot to run properly you will need to update 3 project files.
 
 user settings:
 ```
-dispatch_zipcode = "90210" # used to calculate mileage fee
-company_name = "your company name"
-bot_name = "the bot name"
-company_address = "your company address"
-company_phone = "your company phone"
-company_email = "your company email"
-allowed_service_locations = ['CA', 'TX', ...] # you can enter states or zip codes seperated by a comma
-mileage_fee = 1 # setting for $ per mile on mileage fee calculation
-price_per_hour = 200 # company price per working hour
-years_in_operation = "15"
-company_license = "your license"
-company_type = "carrier/broker/other"
+dispatch_zipcode = "90210"  # used to calculate mileage fee
+company_name = ""
+bot_name = ""
+company_address = ""
+company_phone = ""
+company_email = ""
+mileage_fee = 1   # price per mile on mileage fee calculation
+price_per_hour = 200
+years_in_operation = ""
+company_license = ""
+company_type = ""
 minimum_hours_per_job = 3
+allowed_service_locations = ['CA', '90210', ...]   # you can enter states or zip codes seperated by a comma
 ```
 2. Update the questions.txt file
 
@@ -72,10 +72,7 @@ CLIENT: do you offer insurance for my items?
 BOT:
 CLIENT:
 BOT:
-CLIENT:
-BOT:
-CLIENT:
-BOT:
+...
 ```
 
 3. Update the cubic feet for the items in the inventory.txt file
@@ -86,12 +83,8 @@ inventory.text
 ```
 king bed : 10
 queen bed : 10
-single bed : 10
-night stand : 10
-dresser : 10
-large mirror : 10
-chest : 10
-tv : 10
+dresser: 10
+...
 ```
 
 # The conversation flow
@@ -109,10 +102,7 @@ The bot is designed to work in conversation stages:
 Once all of the files are updated with the necessary information.
 Run the flask app on your local machine and start fine tuning the bot by altering the questions.txt and inventoy.txt as needed.
 
-Once all of the files are updated with the necessary information.
-Run the flask app on your local machine and start fine tuning the bot by altering the questions.txt and inventoy.txt as needed.
-
-# Notes
+# Train your openai model
 
 The bot has the power of an openai model behind it so it is quite intelegant.
 But some fine tuning is likely to be required.
