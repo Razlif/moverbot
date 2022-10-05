@@ -1,44 +1,102 @@
-king bed : 10
-queen bed : 10
-single bed : 10
-night stand : 10
-dresser : 10
-large mirror : 10
-chest : 10
-tv : 10
-small box : 10
-medium box : 10
-large box : 10
-coffee table : 10
-end table : 10
-lamp : 10
-book case : 10
-book shelf : 10
-sofa : 10
-loveseat : 10
-sofa chair : 10
-dining table : 10
-dining chair : 10
-2 pc sectional : 10
-desk : 10
-desk chair : 10
-china cabinet : 10
-washer : 10
-dryer : 10
-refrigirator : 10
-small furniture item : 10
-medium furniture item : 10
-other small item : 10
-other medium item : 10
-bag : 10
-handheld item : 10
-small chair : 10
-medium chair : 10
-large chair : 10
-medium table : 10
-large table : 10
-wall hanging item small : 10
-mirror : 10
-upright piano : 10
-tv stand : 10
-
+mattress:45
+king bed:90
+queen bed:75
+full bed:60
+single bed:50
+twin bed:50
+bunk bed:80
+daybed:50
+crib:25
+headboard:15
+footboard:15
+box spring:25
+bed frame:25
+nightstand:5
+regular dresser:25
+large dresser:40
+regular chest:25
+large chest:40
+credenza:40
+bookcase:25
+bookshelf:25
+china cabinet:50
+filing cabinet regular:20
+filing cabinet large:40
+buffet:40
+kitchen island:40
+curio cabinet:25
+vanity table:20
+end table:5
+coffee table:15
+kitchen table:25
+dining table:40
+sofa table:15
+other small table:15
+other medium table:30
+other large table:50
+folding table:10
+patio table:25
+changing table:15
+child table:10
+regular desk:25
+large desk:50
+regular chair:5
+arm chair:15
+rocking chair:15
+patio chair:8
+lounge chair:20
+sofa chair:25
+recliner chair:15
+lazy boy chair:35
+rug:10
+lamp:5
+fan:5
+mirror:10
+microwave:5
+stove:10
+washer:25
+oven:25
+dryer:25
+small refrigerator:15
+regular refrigerator:60
+freezer:40
+bag:5
+suitcase:5
+plastic bin:5
+tote:5
+upright piano:80
+lawnmower push:25
+bicycle:10
+tool box:20
+barbeque:20
+smoker:20
+metal shelving unit:20
+small bench:10
+large bench:20
+motorcycle:150
+sofa:60
+loveseat:45
+2 pc sectional:110
+ottoman:10
+chaise:40
+tv:20
+tv stand:40
+computer:10
+speaker:5
+electric fireplace:40
+bar table:30
+small cart:10
+trunk:10
+regular picture:5
+large picture:10
+garden tool:5
+ladder:10
+small box:3
+medium box:4
+large box:5
+other small item:5
+other medium item:25
+other small furniture:10
+other medium furniture:20
+other small appliance:5
+other medium appliance:20

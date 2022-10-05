@@ -38,52 +38,88 @@ SECRET_KEY = "Your openai api key"
 
 # Updating the company information and settings
 
-For the bot to run properly you will need to update 3 project files.
+For the bot to run properly you will need to update 4 project files.
 
 1. Update the company information on the settings.py file
 
+>update only the user settings section
+
 settings.py:
 ```
-dispatch_zipcode = "90210"  # used to calculate mileage fee
-company_name = ""
-bot_name = ""
-company_address = ""
-company_phone = ""
-company_email = ""
-mileage_fee = 1   # price per mile on mileage fee calculation
+dispatch_zipcode = "10001"  # dispatch zip code for milage fee calculation
+company_name = "Example Movers Inc"
+bot_name = "Moverbot"
+company_address = "1 West Street, NY, NY 10001"
+company_phone = "(999) 999-9999"
+company_email = "sales@examplemovers.com"
+allowed_pickup_locations = ['NY', '10001'] # add states or zip codes
+allowed_delivery_locations = ['NY', '10001'] # add states or zip codes
+mileage_fee = 1  # price per mile for mileage fee calculation
+minimum_cf_per_job = 300
 price_per_hour = 200
-years_in_operation = ""
-company_license = ""
-company_type = ""
+years_in_operation = "3"
+company_license = "license #999999"
+company_type = "company type"
 minimum_hours_per_job = 3
-allowed_service_locations = ['CA', '90210', ...]   # you can enter states or zip codes separated by a comma
+discount = 5 # discount in % added to final price
+gas_charge = 15 # gas charge in % added to final price for long distance moves
 ```
-> update only the user settings section
 
 2. Update the questions.txt file
 
+>This will be a reference for the bot - you can add and remove questions as needed
+
 questions.txt
 ```
-CLIENT: What is the price for? How much will it cost?
-BOT: All local movers are required to charge by the hour. We charge $__ per hour for the truck and crew with a minimum of __ hours per job.
+CLIENT: Hi
+BOT: Hi! Can I help you get a movng estimate from Example Movers Inc?
 CLIENT: Do you offer insurance for my items?
-BOT:
-CLIENT:
-BOT:
+BOT: yes we provide basic coverage at the amount $0.6 per lbs for all of your items already included in the estimate.
+CLIENT: what items can you move?
+BOT: all household items including pianos and anything that will fit in a moving truck.
+CLIENT: what items can't you move?
+BOT: Example Movers can not move animals, live plants, people, dangerous materials, guns etc.
 ...
 ```
-> This will be a reference for the bot - you can add and remove questions as needed.
 
 3. Update the cubic feet for the items in the inventory.txt file
 
+>You can add or remove items as needed
+
 inventory.text
 ```
-king bed : 10
-queen bed : 10
-dresser: 10
+mattress:45
+king bed:90
+queen bed:75
+full bed:60
 ...
 ```
-> You can add or remove items as needed
+4. Update your price sheet in the price_list.csv
+
+>IMPROTANT
+Your price_list.csv file must appear in the following format:
+
+1. The A1 cell should be empty
+2. All of the states should appear on the A column staring at A2
+3. All of the cubic ft headrs should appear on the first line starting at B2
+4. The cubic ft headrs should start with your mimum CF per job and increase by 100 CF each for each column
+
+A price_list.csv example file is included in the project folder.
+![price list](~/moverbot/static/pricelist.JPG)
+
+
+# Price calculation
+
+The price for local moves is based on hourly work.
+The calculation is:
+```
+local move price = ((working hours x price per hour ) + mileage fee) x discount
+```
+
+The price for long distance moves is based on Cubic Feet.
+```
+long distance move price = Cubic Feet x rate per CF x gas charge x discount
+```
 
 # The conversation flow
 

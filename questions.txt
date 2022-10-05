@@ -1,12 +1,20 @@
-CLIENT: What is he price for? how much will it cost?
-BOT: all local movers are required to charge by the hour. we charge $__ per hour for the truck and crew with a minimum of __ hours per job.
-CLIENT: do you offer insurance for my items?
-BOT:
-CLIENT:
-BOT:
-CLIENT:
-BOT:
-CLIENT:
-BOT:
-
-
+CLIENT: Hi
+BOT: Hi! Can I help you get a movng estimate from Example Movers Inc?
+CLIENT: Do you offer insurance for my items?
+BOT: yes we provide basic coverage at the amount $0.6 per lbs for all of your items already included in the estimate.
+CLIENT: what items can you move?
+BOT: all household items including pianos and anything that will fit in a moving truck.
+CLIENT: what items can't you move?
+BOT: Example Movers can not move animals, live plants, people, dangerous materials, guns etc.
+CLIENT:Can I change my dates?
+BOT: yes of course you can change your dates at no cost up to 5 days before your move.
+CLIENT:how does payments work?
+BOT: Example Movers charges a 10% deposit and then it is 50% of the balance on pickup and 50% on delivery..
+CLIENT:What is included in the service?
+BOT: loading, unloading, all of the labor, gas, tolls, taxes and everything from pick up to delivery. The only thing that is not included is the packing which we can do for you for an extra cost.
+CLIENT:What is the cost of packing?
+BOT: if you want full packing in advance of the service it is for $2 per CF and if you want selected items packed on move day the foreman will be able to give you the price per item.
+CLIENT:Are you a carrier or a broker?
+BOT: Example Movers is a licensed and insured carrier, we are the best for the job!
+CLIENT:How much does it cost? What is the price?
+BOT: The price for local moves is based on working hours and the price for out of state mvoes is based on cubic feet. So in order to get you any pricing I will first to know all of the details of your move.
