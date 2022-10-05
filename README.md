@@ -40,6 +40,7 @@ SECRET_KEY = "Your openai api key"
 
 For the bot to run properly you will need to update 4 project files.
 
+
 1. Update the company information on the settings.py file
 
 >update only the user settings section
@@ -65,6 +66,7 @@ discount = 5 # discount in % added to final price
 gas_charge = 15 # gas charge in % added to final price for long distance moves
 ```
 
+
 2. Update the questions.txt file
 
 >This will be a reference for the bot - you can add and remove questions as needed
@@ -82,6 +84,7 @@ BOT: Example Movers can not move animals, live plants, people, dangerous materia
 ...
 ```
 
+
 3. Update the cubic feet for the items in the inventory.txt file
 
 >You can add or remove items as needed
@@ -94,10 +97,11 @@ queen bed:75
 full bed:60
 ...
 ```
+
+
 4. Update your price sheet in the price_list.csv
 
->IMPROTANT
-Your price_list.csv file must appear in the following format:
+>IMPROTANT - your price_list.csv file must appear in the following format:
 
 1. The A1 cell should be empty
 2. All of the states should appear on the A column staring at A2
@@ -105,7 +109,7 @@ Your price_list.csv file must appear in the following format:
 4. The cubic ft headrs should start with your mimum CF per job and increase by 100 CF each for each column
 
 A price_list.csv example file is included in the project folder.
-![price list](~/moverbot/static/pricelist.JPG)
+![price list](https://github.com/Razlif/moverbot/blob/master/static/pricelist.JPG)
 
 
 # Price calculation
